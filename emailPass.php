@@ -45,14 +45,14 @@
 // mail('brianpgerson@gmail.com', $subject, $WHATmessage ); 
 
 // Here we get all the information from the fields sent over by the form.
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+$name = $_POST['fullName'];
+$email = $_POST['emailAddress1'];
+$message = $_POST['shootUs'];
  
-$to = 'youremail@domain.com';
-$subject = 'the subject';
+$to = 'brianpgerson@gmail.com';
+$subject = 'A new message for Suite Club';
 $message = 'FROM: '.$name.' Email: '.$email.'Message: '.$message;
-$headers = 'From: youremail@domain.com' . "\r\n";
+$headers = 'From: brianpgerson@gmail.com' . "\r\n";
  
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) { // this line checks that we have a valid email address
 mail($to, $subject, $message, $headers); //This method sends the mail.
