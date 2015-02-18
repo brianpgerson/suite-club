@@ -25,10 +25,7 @@
  
 $('#contactsubmit').click(function(){
  
-$.post("emailPass.php", $("#mycontactform").serialize(),  
-
-  function(response) {
-
+$.post("send.php", $("#mycontactform").serialize(),  function(response) {
 $('#success').html(response);
 //$('#success').hide('slow');
 });
@@ -36,7 +33,7 @@ return false;
  
 });
 
-  });
+});
  
 });
 
