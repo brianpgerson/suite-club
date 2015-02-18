@@ -21,7 +21,7 @@ echo 'Connected successfully';
 
 // name
 
-$value = $_POST['fullName'];
+$value = htmlspecialchars($_POST['fullName']);
 
 $sql = "INSERT INTO tryItOnce (fullName) VALUES ('$value')";
 
@@ -31,7 +31,7 @@ if (!mysql_query($sql)) {
 
 // emailAddress1
 
-$value = $_POST['emailAddress1'];
+$value = htmlspecialchars($_POST['emailAddress1']);
 
 $sql = "INSERT INTO tryItOnce (emailAddress1) VALUES ('$value')";
 
@@ -41,7 +41,7 @@ if (!mysql_query($sql)) {
 
 // message
 
-$value = $_POST['shootUs'];
+$value = htmlspecialchars($_POST['shootUs']);
 
 $sql = "INSERT INTO tryItOnce (shootUs) VALUES ('$value')";
 
