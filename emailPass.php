@@ -2,24 +2,24 @@
 
 // BEGIN connection stuff
 
-define('DB_NAME', 'thesuiu2_firstpass');
-define('DB_USER', 'thesuiu2_root');
-define('DB_PASSWORD', 'iamroot');
-define('DB_HOST', 'localhost');
+// define('DB_NAME', 'thesuiu2_firstpass');
+// define('DB_USER', 'thesuiu2_root');
+// define('DB_PASSWORD', 'iamroot');
+// define('DB_HOST', 'localhost');
 
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+// $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
-if(!link) {
-	die('Could not connect: ' . mysql_error());
-}
+// if(!link) {
+// 	die('Could not connect: ' . mysql_error());
+// }
 
-$db_selected = mysql_select_db (DB_NAME, $link);
+// $db_selected = mysql_select_db (DB_NAME, $link);
 
-if (!$db_selected) {
-	die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
-}
+// if (!$db_selected) {
+// 	die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
+// }
 
-echo 'Connected successfully';
+// echo 'Connected successfully';
 
 // END connection stuff
 
