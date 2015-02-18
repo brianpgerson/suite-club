@@ -17,7 +17,7 @@ if (!$db_selected) {
 	die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 }
 
-// echo 'Connected successfully';
+echo 'Connected successfully';
 
 // name
 
@@ -31,7 +31,7 @@ if (!mysql_query($sql)) {
 
 // emailAddress1
 
-$value = $_POST['organization'];
+$value = $_POST['emailAddress1'];
 
 $sql = "INSERT INTO tryItOnce (emailAddress1) VALUES ('$value')";
 
@@ -41,9 +41,9 @@ if (!mysql_query($sql)) {
 
 // message
 
-$value = $_POST['message'];
+$value = $_POST['shootUs'];
 
-$sql = "INSERT INTO tryItOnce (message) VALUES ('$value')";
+$sql = "INSERT INTO tryItOnce (shootUs) VALUES ('$value')";
 
 if (!mysql_query($sql)) {
 	die('Error. Error. ' . mysql_error());
