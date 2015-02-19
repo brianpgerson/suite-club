@@ -21,39 +21,33 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
-      $("window").load(function() {
-      $("body").removeClass("preload");
+        $('#mycontactform').on('submit', function(e){
+          e.preventDefault();
+          
+          $.post(
+            'emailPass.php',
+            $('#mycontactform').serialize(), 
+            function(response) {
+               console.log(response);
+            },
+            'json' // I expect a JSON response
+          );
 
-      $('#mycontactform').on('submit', function(e){
-        e.preventDefault();
-        alert('we made it')
-        
-      });
+        });  
+      
     });
       
   
  
       // .click( function() {
-      //     $.post( 'emailPass.php', $('#mycontactform').serialize(), function(data) {
-      //          ... do something with response from server
-      //        },
-      //        'json' // I expect a JSON response
-      //     );
+         
       // });
-
-    
   </script>
 
 
 </head>
 
 <body class="preload">
-
-<script>
-
-</script>
-
-
   <main>
 
     <nav class="clearfix">
