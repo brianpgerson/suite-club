@@ -44,7 +44,7 @@ $subject = 'Suite Club Inquiry - ' . $fullName;
 $WHATmessage = $fullName . ' is looking forward to hearing from us!'.PHP_EOL.'Their email is: '. $emailAddress1 .'!'.PHP_EOL.'They said: "'.$shootUs.'"';
 mail('brianpgerson@gmail.com', $subject, $WHATmessage ); 
 
-return 'hello';
+echo "Your email was sent!";
 
 // Here we get all the information from the fields sent over by the form.
 
