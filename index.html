@@ -25,10 +25,12 @@
  
 $('#contactsubmit').click(function(){
  
-$.post("emailPass.php", $("#mycontactform").serialize(),  function(response) {
-$('#success').html(response);
-//$('#success').hide('slow');
-});
+$.post("emailPass.php", $("#mycontactform").serialize()
+//   ,  function(response) {
+// $('#success').html(response);
+// //$('#success').hide('slow');
+// }
+);
 return false;
  
 });
@@ -36,8 +38,7 @@ return false;
 });
  
 });
-
-  </script>
+</script>
 
 
 </head>
@@ -221,7 +222,7 @@ return false;
               <label for="fullName">Full Name:</label>
               <input id="name" type="text" name="fullName"></li>
              <li>
-              <label for="emailAddress">Email Address:</label>
+              <label for="emailAddress1">Email Address:</label>
               <input type="text" name="email"></li>
              <li>
               <label for="shootUs">Shoot us a Message:</label>
