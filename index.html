@@ -24,14 +24,25 @@
         $('#mycontactform').on('submit', function(e){
           e.preventDefault();
           
-          $.post(
-            'emailPass.php',
-            $('#mycontactform').serialize(), 
-            function(response) {
-               console.log(response);
-            },
-            'text' // I expect a JSON response
+          $.ajax ({
+            type: "POST",
+            url: emailPass.php,
+            data: $('#mycontactform').serialize(),
+            success: function(response) {
+               alert(response);
+          }
+          'text'
           );
+
+
+          // $.post(
+          //   'emailPass.php',
+          //   $('#mycontactform').serialize(), 
+          //   function(response) {
+          //      console.log(response);
+          //   },
+          //   'text' // I expect a JSON response
+          // );
 
         });  
       
