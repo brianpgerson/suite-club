@@ -21,10 +21,12 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
+        $(".submit_message").hide();
+
         $('#mycontactform').on('submit', function(e){
           e.preventDefault();
           
-          $.ajax ({
+        $.ajax ({
             type: "POST",
             url: "emailPass.php",
             data: $('#mycontactform').serialize(),
@@ -34,6 +36,8 @@
             dataType: 'text'
           });
 
+        $(".contact_forms").hide();
+        $(".submit_message").show();
 
         });  
       
@@ -223,8 +227,13 @@
            </ul>
           </form>
         </div>
+
       </div>
 
+            <div class="submit_message">
+          <h2>Thanks!</h2>
+          <p>We'll be in touch soon.</p>
+        </div>
         
       </section>
 

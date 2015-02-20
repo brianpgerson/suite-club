@@ -467,12 +467,10 @@ label {
 
 
   .contact-wrap {
-    bottom: -80px;
-    position: relative;
   }
 
   #contact {
-    padding: 0 0 120px 0;
+    padding: 40px 0 120px 0;
     background-attachment: scroll;
     background-size: auto;
     background-position: top; 
@@ -482,11 +480,24 @@ label {
   }
 
   .contact_forms {
-    margin-left: 20px;
+    clear: both;
+    text-align: center;
+  }
+
+   .submit_message {
+    color: #F5F9FD;
+    clear: both;
+    margin: 50px auto;
+    background-color: rgba(0,0,0,0.15); 
+    width: 80%;
+    padding: 10px;
+
   }
 
   .contact_copy {
-    margin-bottom: 10px;
+    margin-bottom: 60px;
+    background-color: rgba(0,0,0,0.15); 
+
   }
 
    #sitelock_shield_logo {
@@ -598,7 +609,7 @@ label {
     background-image: url("../img/demo/_small/baseballmacro.jpg");
     background-position: bottom;
     background-repeat: no-repeat; 
-    height: 700px;
+    height: 750px;
 
   }
 
@@ -609,8 +620,10 @@ label {
 
   .contact_copy {
     color: #F5F9FD;
-    padding: 0 80px;
-    margin-bottom: 40px;
+    padding: 20px;
+    margin: 0 20px 40px 20px;
+    background-color: rgba(0,0,0,0.15);
+
   }
 
   .contact_forms {
@@ -618,6 +631,14 @@ label {
     display: block;
     position: relative;
     width: 75%;
+  }
+  .submit_message {
+    color: #F5F9FD;
+    margin: 40px 0 0 20px;
+    background-color: rgba(0,0,0,0.15);
+    padding: 20px; 
+    position: relative;
+    float: left;
   }
 
   #sitelock_shield_logo {
@@ -777,6 +798,17 @@ label {
     display: block;
     position: relative;
     width: 40%;
+  }
+
+ .submit_message {
+    float: left;
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;    
+    color: #F5F9FD;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.15); 
   }
 
   footer {
