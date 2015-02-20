@@ -31,13 +31,13 @@
             url: "emailPass.php",
             data: $('#mycontactform').serialize(),
             success: function(response) {
-               alert(response);
+                 $(".contact_forms").hide();
+                 $(".submit_message").show();
           },
             dataType: 'text'
           });
 
-        $(".contact_forms").hide();
-        $(".submit_message").show();
+      
 
         });  
       
@@ -230,11 +230,11 @@
 
       </div>
 
-            <div class="submit_message">
+        <div class="submit_message">
           <h2>Thanks!</h2>
           <p>We'll be in touch soon.</p>
         </div>
-        
+
       </section>
 
 
