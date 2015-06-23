@@ -21,6 +21,11 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
+
+        $('#closeVid').click(function(){
+          $('#vidOverlay').remove();
+        });
+
         $(".submit_message").hide();
 
         $('#mycontactform').on('submit', function(e){
@@ -62,6 +67,10 @@
     </nav>
 <!-- hello brian -->      
       <section class="module parallax parallax-1">
+        <div id="vidOverlay">
+          <img src="img/xout.png" alt"close" align="right" id = "closeVid" />
+          <iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0"  allowfullscreen></iframe>
+        </div>
         <div class="container">
           <h1>Suite Club</h1>
           <h3>Intelligent ticketing isn't a luxury.</h2>
@@ -94,6 +103,7 @@
 <!-- fnames[2]='LNAME';ftypes[2]='text'; (afterFNAME1) -->
         </div>
          <img src="img/arrow.png" alt"Scroll Down" id="mob_scroll" />
+      <!--  </div> -->
       </section>
 
    <section class="module content">    
@@ -107,7 +117,7 @@
               <h2>No More Empty Suites</h2>
               <p>Whether you're a salesteam or a stadium, vacant suites represent a lost opportunity. Suite Club's intelligent ticketing platform puts the power back in your hands. <strong>See how:</strong> </p>
             </div>
-              <iframe id="cutepuppy" src="//player.vimeo.com/video/24480876"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <iframe id="cutepuppy" src="https://www.youtube.com/embed/Tx5dAAUXMNI" frameborder="0" allowfullscreen></iframe>
          </div>
 
 
@@ -147,7 +157,7 @@
         <div class="icon">
           <img src="img/money.png" alt="">
         </div>
-        <p>Suite lessors funnel cost savings back into budgets</p>
+        <p>Suite tenants funnel cost savings back into budgets</p>
       </div>
 
       <div class="workblock">
