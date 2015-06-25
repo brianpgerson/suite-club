@@ -112,7 +112,7 @@ section.module.parallax h3 {
 }
 
 section.module.parallax-1 {
-  background-image: url("../img/demo/_small/stadium_smaller3.jpg");
+  background-image: url("../img/demo/_small/stadium_smallercut.png");
   height: 600px;
 }
 
@@ -709,7 +709,7 @@ label {
   }
 
   section.module.parallax-1 {
-    background-image: url("../img/demo/_small/stadium_smaller.jpg");
+    background-image: url("../img/demo/_small/stadium_smallercut.png");
     height: 600px;
 }
 

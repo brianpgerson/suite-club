@@ -21,6 +21,22 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
+        if(getParameterByName('reference')){
+          $('#promo').append('<div id="vidOverlay"><img src="img/xout.png" alt"close" align="right" id = "closeVid" /><iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0"  allowfullscreen></iframe></div>');  
+        }
+      
+
+        function getParameterByName( name ){
+          name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+          var regexS = "[\\?&]"+name+"=([^&#]*)", 
+              regex = new RegExp( regexS ),
+              results = regex.exec( window.location.href );
+          if( results == null ){
+            return "";
+          } else{
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+          }
+        }
 
         $('#closeVid').click(function(){
           $('#vidOverlay').remove();
@@ -61,16 +77,14 @@
       <ul>
           <li><a href="http://www.thesuiteclub.co">Suite Club</a></li>
           <li><a href="#how_it_works">About</a></li>
-          <li><a href="#forteams">Why It Works</a></li>
+          <li><a href="#forteams">Who's It For?</a></li>
           <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 <!-- hello brian -->      
       <section class="module parallax parallax-1">
-        <div id="vidOverlay">
-          <img src="img/xout.png" alt"close" align="right" id = "closeVid" />
-          <iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0"  allowfullscreen></iframe>
-        </div>
+        <div id="promo">
+        </div>  
         <div class="container">
           <h1>Suite Club</h1>
           <h3>Intelligent ticketing isn't a luxury.</h2>
