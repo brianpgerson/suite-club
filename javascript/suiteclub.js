@@ -3,14 +3,16 @@ $(document).ready(function() {
     $('#promo').append('<div id="vidOverlay"><img src="img/xout.png" alt"close" align="right" id = "closeVid" /><iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0"  allowfullscreen></iframe></div>');  
   }
 
+  $('#closeVid').click(function(){
+    $('#vidOverlay').remove();
+  });
+
   $(".submit_message").hide();
 
 });
 
 
-$('#closeVid').click(function(){
-  $('#vidOverlay').remove();
-});
+
 
 $('#mycontactform').on('submit', function(e){
   e.preventDefault();
@@ -50,3 +52,4 @@ function getParameterByName( name ){
 
 ga('create', 'UA-65101011-1', 'auto');
 ga('send', 'pageview');
+
