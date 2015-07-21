@@ -1,8 +1,6 @@
 $(document).ready(function() {
   if(getParameterByName('reference')){
-    $('#promo').append('<div id="vidOverlay">
-      <img src="img/xout.png" alt"close" align="right" id = "closeVid" />
-      <iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0" id="shortVid" allowfullscreen></iframe></div>');  
+    $('#promo').append('<div id="vidOverlay"><img src="img/xout.png" alt"close" align="right" id = "closeVid" /><iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0" id="shortVid" allowfullscreen></iframe></div>');  
   }
 
   $('#closeVid').click(function(){
@@ -11,6 +9,20 @@ $(document).ready(function() {
 
   $(".submit_message").hide();
 
+  $('#closeVid').on('click', function() {
+    ga('send', 'event', 'video', 'click');
+    console.log("working!");
+  });
+
+  $('#mc-embedded-subscribe').on('click', function() {
+    ga('send', 'event', 'sign-up', 'click');
+    console.log("working!");
+  });
+
+  $('.nbar').on('click', function() {
+    ga('send', 'event', 'navbar', 'play');
+    console.log("working!");
+  });
 });
 
 
@@ -27,9 +39,6 @@ $('#mycontactform').on('submit', function(e){
    },
    dataType: 'text'
  });
-
-
-
 });  
 
 
@@ -61,17 +70,67 @@ function getParameterByName( name ){
 ga('create', 'UA-65101011-1', 'auto');
 ga('send', 'pageview');
 
-var CLOSEVID = document.getElementById('closeVid');
-addListener(CLOSEVID, 'click', function() {
-  ga('send', 'event', 'closeVid', 'click');
-});
 
-var JOIN = document.getElementById('mc-embedded-subscribe');
-addListener(JOIN, 'click', function() {
-  ga('send', 'event', 'mc-embedded-subscribe', 'click');
-});
 
-var PLAYVID = document.getElementById("shortVid");
-addListener(PLAYVID, 'play', function() {
-  ga('send', 'event', 'shortVid', 'play');
-});
+
+
+
+//========================
+// crazy egg
+//========================
+
+setTimeout(function(){var a=document.createElement("script");
+  var b=document.getElementsByTagName("script")[0];
+  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0036/9146.js?"+Math.floor(new Date().getTime()/3600000);
+  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+
+
+
+//========================
+// youtube api
+//========================
+
+var tag = document.createElement('script');
+tag.src = "http://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+var lastAction = '';
+function onYouTubePlayerAPIReady() {
+ player = new YT.Player('player', {
+   playerVars: {
+     modestbranding: true,
+     theme: 'light',
+     rel: 0
+   },
+   height: '276',
+   width: '430',
+   videoId: 'Tx5dAAUXMNI',
+   events: {
+     'onStateChange': onPlayerStateChange
+   }
+ });
+}
+
+function onPlayerStateChange(event) {
+ switch (event.data) {
+   case YT.PlayerState.PLAYING:
+                     ga(['send', 'event', 'video', 'started']);
+                     console.log("working?")
+                     break;
+                     case YT.PlayerState.ENDED:
+                     ga(['_trackEvent', 'event', 'video', 'completed']);
+                     console.log("working?")
+                     break;
+                     case YT.PlayerState.PAUSED:
+                     if (lastAction != 'paused') {
+                       ga(['_trackEvent', 'event', 'video', 'paused']);
+                       console.log("working?")
+                     } else {
+                       lastAction = 'paused';
+                     }
+                     break;
+                   }
+                 }
+
