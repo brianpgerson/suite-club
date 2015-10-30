@@ -1,6 +1,6 @@
 $(document).ready(function() {
   if(getParameterByName('reference')){
-    $('#promo').append('<div id="vidOverlay"><img src="img/xout.png" alt"close" align="right" id = "closeVid" /><iframe id="viz" width="853" height="480" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0" id="shortVid" allowfullscreen></iframe></div>');  
+    $('#promo').append('<div id="vidOverlay"><img src="img/xout.png" alt"close" align="right" id = "closeVid" /><iframe id="viz" src="https://www.youtube.com/embed/hWILjYJ1h0s?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0?" frameborder="0" id="shortVid" allowfullscreen></iframe></div>');  
   }
 
   $('#closeVid').click(function(){
@@ -19,10 +19,23 @@ $(document).ready(function() {
     console.log("working!");
   });
 
-  $('.nbar').on('click', function() {
-    ga('send', 'event', 'navbar', 'play');
+//nav bar clicks
+
+  $('.nbarAbout').on('click', function() {
+    ga('send', 'event', 'navbarAbout', 'click');
     console.log("working!");
   });
+  
+  $('.nbarWho').on('click', function() {
+    ga('send', 'event', 'navbarWho', 'click');
+    console.log("working!");
+  });
+
+    $('.nbarContact').on('click', function() {
+    ga('send', 'event', 'navbarContact', 'click');
+    console.log("working!");
+  });
+
 });
 
 
@@ -116,21 +129,21 @@ function onYouTubePlayerAPIReady() {
 function onPlayerStateChange(event) {
  switch (event.data) {
    case YT.PlayerState.PLAYING:
-                     ga(['send', 'event', 'video', 'started']);
-                     console.log("working?")
-                     break;
-                     case YT.PlayerState.ENDED:
-                     ga(['_trackEvent', 'event', 'video', 'completed']);
-                     console.log("working?")
-                     break;
-                     case YT.PlayerState.PAUSED:
-                     if (lastAction != 'paused') {
-                       ga(['_trackEvent', 'event', 'video', 'paused']);
-                       console.log("working?")
-                     } else {
-                       lastAction = 'paused';
-                     }
-                     break;
-                   }
-                 }
+   ga(['send', 'event', 'video', 'started']);
+   console.log("working?")
+   break;
+   case YT.PlayerState.ENDED:
+   ga(['_trackEvent', 'event', 'video', 'completed']);
+   console.log("working?")
+   break;
+   case YT.PlayerState.PAUSED:
+   if (lastAction != 'paused') {
+     ga(['_trackEvent', 'event', 'video', 'paused']);
+     console.log("working?")
+   } else {
+     lastAction = 'paused';
+   }
+   break;
+ }
+}
 
